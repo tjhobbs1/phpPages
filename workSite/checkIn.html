@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Daily Check in Sheet</title>
+
+    <script type="text/javascript">
+  //Form Variables
+
+  //Array for error messages
+    let errorMessages =[];
+      //Check If Crew One is equal to crew two
+      function validateForm(){
+        //Check to make sure an aircraft is selected
+        if(document.querySelector("#tailNum").value ===""){
+          errorMessages.push("You must select an Aircraft");
+        }
+        //Check to make sure that crewOne has a selected user
+        if(document.querySelector("#crewOne").value===""){
+          errorMessages.push("You must select crew one");
+        }
+
+        //Check to make sure that crewOne has a selected user
+        if(document.querySelector("#crewTwo").value===""){
+          errorMessages.push("You must select crew two");
+        }
+
+        //Check to see if crewOne is the same as Crew Two
+        if(document.querySelector("#crewOne").value===document.querySelector("#crewTwo").value){
+            errorMessages.push("Crew Members can't be the same");
+        }//end If
+
+        //Check to see if any errors had been caught
+        if(errorMessages.length > 0){
+          console.log(errorMessages);
+          return false;
+        }else{
+          return true;
+        }
+
+      }//End validateForm()
+
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function bloodAlert(){
+        
+      }
+    </script>
+    <header></header>
+    <!--Check In Form-->
+    <form class="" action="checkin.php" method="post" onsubmit="return validateForm()">
+      <!--Current Date-->
+      <input type="date" name="currentDate" value="">
+      <br>
+      <!--Aircraft-->
+      <select id="tailNum" class="" name="tailNum">
+        <option value="">Select Aircraft</option>
+        <option value="911ED">911ED</option>
+        <option value="911KX">911KX</option>
+        <option value="534LN">534LN</option>
+        <option value="530LN">530LN</option>
+      </select>
+      <br>
+      <!--Crew One-->
+      <select id="crewOne" idea name="crewOne">
+        <option value="">Select Crew One</option>
+        <option value="Ty Hobbs">Ty Hobbs</option>
+        <option value="Heather Scott">Heather Scott</option>
+        <option value="Matt Klein">Matt Klein</option>
+        <option value="Jason Stanford">Jason Stanford</option>
+      </select>
+      <br>
+      <!--Crew Two-->
+      <select id="crewTwo" name="crewTwo">
+        <option value="">Select Crew Two</option>
+        <option value="Ty Hobbs">Ty Hobbs</option>
+        <option value="Heather Scott">Heather Scott</option>
+        <option value="Matt Klein">Matt Klein</option>
+        <option value="Jason Stanford">Jason Stanford</option>
+      </select>
+      <br>
+
+
+      <!--Submit Button-->
+      <button type="submit" name="button">Submit</button>
+    </form>
+
+  </body>
+</html>
