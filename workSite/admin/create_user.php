@@ -23,7 +23,7 @@ if (!isLoggedIn()) {
 	<div class="header">
 		<h2>Admin - create user</h2>
 	</div>
-
+	
 	<form method="post" action="create_user.php">
 
 		<?php echo display_error(); ?>
